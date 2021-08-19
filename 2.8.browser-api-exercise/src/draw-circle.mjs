@@ -1,11 +1,11 @@
 /**
- * Draw a circle within the element with a given width
+ * Draw a circle within the element with a given radius
  * @param {HTMLElement} element
- * @param width number
+ * @param radius number
  */
-export function drawCircle(element, width) {
+ export function drawCircle(element, radius) {
   const canvas = document.createElement('canvas');
   element.appendChild(canvas);
   const context = canvas.getContext('2d');
-  context.arc(width, width, width, 0, 360);
+  context.arc(radius, radius, radius, 0, 360);
 }
