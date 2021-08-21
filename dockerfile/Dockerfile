@@ -18,7 +18,7 @@ RUN wget --no-verbose -O /tmp/chrome.deb https://dl.google.com/linux/chrome/deb/
 # Install chrome driver for jasmine browser runner
 RUN wget https://chromedriver.storage.googleapis.com/91.0.4472.101/chromedriver_linux64.zip && unzip chromedriver_linux64.zip && mv chromedriver /usr/bin/chromedriver && chown root:root /usr/bin/chromedriver && chmod +x /usr/bin/chromedriver
 
-# RUN npm install -g @angular/cli
+RUN npm install -g nodemon
 
 # set the workdir to be the Educative directory
 WORKDIR /usr/local/educative/unit-testing-course
