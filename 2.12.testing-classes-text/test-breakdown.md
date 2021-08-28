@@ -48,4 +48,4 @@ Looking at the `spec/article-delete.spec.mjs` file we have:
       article = new ArticleDelete(articleAPI);
     });
    ```
-   knowing that we need an instance of the `ArticleAPI` we create a spy object with a spy on the `delete` method as that's the only method we use in the logic of `ArticleDelete` class. Then in the next line we instantiate a
+   knowing that we need an instance of the `ArticleAPI` we create a spy object with a spy on the `delete` method as that's the only method we use in the logic of `ArticleDelete` class. Then in the next line, we instantiate the `ArticleDelete` instance
