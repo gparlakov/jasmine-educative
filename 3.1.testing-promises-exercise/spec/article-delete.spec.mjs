@@ -25,7 +25,6 @@ describe('ArticleDelete', () => {
     // act
     const result = await article.delete({ id: 1, title: 'the first article' });
     // assert
-    expect(articleAPI.delete).toHaveBeenCalledOnceWith(1);
     expect(result).toEqual('It looks like article "the first article" has alreay been deleted');
   });
 
