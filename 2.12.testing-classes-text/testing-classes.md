@@ -74,7 +74,7 @@ Looking at the `spec/article-delete.spec.mjs` file we have:
      article = new ArticleDelete(articleAPI);
    });
    ```
-   knowing that we need an instance of the `ArticleAPI` we create a spy object with a spy on the `delete` method as that's the only method we use in the logic of `ArticleDelete` class. Then in the next line, we instantiate an `ArticleDelete` instance. These two instances will get renewed `beforeEach` test so that each test executes in isolation from the others and no one test influences the others.
+   knowing that we need an instance of the `ArticleAPI` we create a spy object with a spy on the `delete` method as that's the only method we use in the logic of the `ArticleDelete` class. Then in the next line, we instantiate an `ArticleDelete` instance. These two instances will get renewed `beforeEach` test so that each test executes in isolation from the others and no one test influences the others.
 
 - ```js
   it(`should call the articleAPI delete and return the deleted article title`, () => {
@@ -86,7 +86,7 @@ Looking at the `spec/article-delete.spec.mjs` file we have:
     expect(result).toEqual('article deleted: "the first article"');
   });
   ```
-  in the first test run the `article.delete` passing in the expected article object with an `id` and a `title`. Then, we assert that the dependency's `delete` method has been called with the argument expected (`1`) and the result is the expected string (`'article deleted: "the first article"'`)
+  in the first test, we run the `article.delete` passing in the expected article object with an `id` and a `title`. Then, we assert that the dependency's `delete` method has been called with the argument expected (`1`) and the result is the expected string (`'article deleted: "the first article"'`)
 - ```js
   it(`should return no article to delete when that's the case`, () => {
     // arrange
@@ -96,4 +96,23 @@ Looking at the `spec/article-delete.spec.mjs` file we have:
     expect(result).toEqual('no article to delete');
   });
   ```
-  in the second test we make sure that when the `delete` method is called without an article it will return the expected string - `'no article to delete'`
+  in the second test, we make sure that when the `delete` method is called without an article, it will return the expected string - `'no article to delete'`
+
+## Exercise
+
+For this exercise, we'll use the `src/article-create.mjs` in the code playground below. The `ArticleCreate` class is very similar to `ArticleDelete` with the difference being the `create` method:
+- ```js
+  create(title, content) {
+    if (typeof title === 'string' && typeof content === 'string') {
+      this.articleAPI.create(title, content);
+      return `article created: "${title}" with content "${content}"`;
+    }
+
+    return `expected string title and content but recived title: "${title}" content: "${content}"`;
+  }
+  ```
+  it takes 2 parameters: `title` and `content` to create the article. And it invokes the `ArticleAPI`'s `create` method. The returned strings confirm the creation of the article or inform of an error.
+
+Let's create the 2 specs for the above logic
+ - when called with a title and content it invokes the `ArticleAPI`'s method `create`
+ - when called without a title or content, it returns an error explanation.
