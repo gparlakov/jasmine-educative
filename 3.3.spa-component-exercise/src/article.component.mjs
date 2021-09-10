@@ -38,7 +38,6 @@ export class ArticleComponent {
   }
 
   onDeleteArticle() {
-
     this.showDeleteArticleConfirmationDialog = true;
   }
 
