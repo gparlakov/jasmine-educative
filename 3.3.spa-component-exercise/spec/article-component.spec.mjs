@@ -86,33 +86,24 @@ describe('ArticleComponent', () => {
 
   fdescribe('article delete', () => {
     it(`when onArticleDelete invoked it should show the article delete dialog`, () => {
+      pending('test user seeing the delete dialog - showDeleteArticleConfirmationDialog');
       // arrange
       // act
-      component.onDeleteArticle();
       // assert
-      expect(component.showDeleteArticleConfirmationDialog).toBe(true);
     });
 
     it(`when onArticleDelete invoked and then cancelled it should hide the dialog`, () => {
+      pending('test user closing the delete dialog on cancel - showDeleteArticleConfirmationDialog');
       // arrange
-      component.onDeleteArticle();
       // act
-      component.onDeleteArticleCancel();
       // assert
-      expect(component.showDeleteArticleConfirmationDialog).toBe(false);
     });
 
     it(`when onArticleDelete invoked and then confirmed it should invoke the article API delete`, async () => {
+      pending('test the full delete flow open dialog and confirm');
       // arrange
-      component.articleId = 1;
-      component.onDeleteArticle();
-      articleAPI.delete.and.returnValue(Promise.resolve());
       // act
-      await component.onDeleteArticleConfirm();
       // assert
-      expect(component.showDeleteArticleConfirmationDialog).toBe(false);
-      expect(articleAPI.delete).toHaveBeenCalledOnceWith(1);
-      expect(userMessenger.info).toHaveBeenCalledOnceWith('Article successfully deleted');
     });
   });
 });
