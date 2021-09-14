@@ -31,34 +31,29 @@ describe('ArticleComponent', () => {
     // act
     await component.afterComponentInitialize();
     // assert
-    expect(articleAPI.get).toHaveBeenCalledOnceWith(1);
     expect(userMessenger.error).toHaveBeenCalledOnceWith('Could not fetch article id: "1". Please try again.');
   });
 
   it(`when initialized it should set loading to true and back to false after the article response arrives`, async () => {
     // arrange
-    let serverRespondWith;
-    articleAPI.get.and.returnValue(new Promise((res) => (serverRespondWith = res)));
+    articleAPI.get.and.returnValue(Promise.resolve({ id: 1 }));
     component.articleId = 1;
     // act
     const initPromise = component.afterComponentInitialize();
     // assert
     expect(component.loading).toBe(true);
-    serverRespondWith({ id: 1 });
     await initPromise;
     expect(component.loading).toBe(false);
   });
 
   it(`when initialized it should set loading to true and back to false even after article fetch fails`, async () => {
     // arrange
-    let fetchFailsWith;
-    articleAPI.get.and.returnValue(new Promise((_, rej) => (fetchFailsWith = rej)));
+    articleAPI.get.and.returnValue(Promise.reject({ message: 'error' }));
     component.articleId = 1;
     // act
     const initPromise = component.afterComponentInitialize();
     // assert
     expect(component.loading).toBe(true);
-    fetchFailsWith({ id: 1 });
     await initPromise;
     expect(component.loading).toBe(false);
   });
@@ -74,7 +69,6 @@ describe('ArticleComponent', () => {
     component.beforeComponentDestroy();
     await initPromise;
     // assert
-    expect(articleAPI.get).toHaveBeenCalledOnceWith(1);
     expect(component.article).toBeUndefined();
   });
 
@@ -87,7 +81,6 @@ describe('ArticleComponent', () => {
     component.beforeComponentDestroy();
     await initPromise;
     // assert
-    expect(articleAPI.get).toHaveBeenCalledOnceWith(1);
     expect(userMessenger.error).not.toHaveBeenCalledOnceWith('Could not fetch article id: "1". Please try again.');
   });
 
