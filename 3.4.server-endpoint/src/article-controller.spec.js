@@ -25,11 +25,11 @@ describe('ArticleApiController', () => {
 
   it('when get called it should search the article collection and return an object with status and message', async () => {
     // arrange
-    articleCollection.findOne.and.returnValue(Promise.reject({error: 'eee'}));
+    articleCollection.findOne.and.returnValue(Promise.reject({ error: 'eee' }));
     // act
     const a = await articleController.get(1);
     // assert
     expect(articleCollection.findOne).toHaveBeenCalledOnceWith({ id: 1 });
-    // expect(a).toEqual({status: 'not found'});
+    expect(a).toEqual({ status: 'not found', message: 'Article with id "1" was not found.' });
   });
 });
