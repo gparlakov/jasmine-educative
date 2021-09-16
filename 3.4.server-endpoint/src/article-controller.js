@@ -10,7 +10,7 @@ class ArticleController {
       const a = await this.db.collection('Article').findOne({ id: id });
       return a;
     } catch (e) {
-      return { status: 'not found', message: `Article with id "${id}" was not found.` };
+      throw { status: 'not found', message: `Article with id "${id}" was not found.` };
     }
   }
 }
