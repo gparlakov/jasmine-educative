@@ -27,7 +27,7 @@ class ArticleController {
         throw e;
       }
 
-      throw { status: 'delete failed', message: `Article with id "${id} could not be deleted."` };
+      throw { status: 'delete failed', message: `Article with id "${id}" could not be deleted.` };
     }
   }
 }

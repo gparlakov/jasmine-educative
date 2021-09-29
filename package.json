@@ -17,7 +17,7 @@
     "jasmine-browser-runner": "^0.7.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
-    "nodemon": "^2.0.7",
+    "nodemon": "^2.0.13",
     "pre-commit": "^1.2.2",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
