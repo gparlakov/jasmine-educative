@@ -14,10 +14,10 @@ export class ArticleComponent {
   }
 
   async afterComponentInitialize() {
-    console.log('afterComponentInitialize')
     this.loading = true;
     try {
       const article = await this.articleAPI.get(this.articleId);
+      console.log('--- got article', article);
       if(!this.destroyed) {
         this.article = article;
       }

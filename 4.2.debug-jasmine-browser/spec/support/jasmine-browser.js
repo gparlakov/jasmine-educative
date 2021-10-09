@@ -17,5 +17,5 @@ module.exports = {
   browser: {
     name: "headlessChrome"
   },
-  reporters: [new specReporter()]
+  reporters: [new specReporter(), './spec/support/reporter.js']
 }
