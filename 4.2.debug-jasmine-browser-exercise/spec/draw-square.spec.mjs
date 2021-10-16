@@ -4,7 +4,6 @@ describe('drawSquare', () => {
   it('should create canvas, append it in the element, get a 2d context and draw the square', () => {
     const contextMock = { rect: jasmine.createSpy('rect') };
     const canvasMock = { getContext: jasmine.createSpy('canvasMock') };
-    canvasMock.getContext.and.returnValue(contextMock);
     const documentSpy = spyOn(document, 'createElement').and.returnValue(canvasMock);
     const element = { appendChild: jasmine.createSpy('appendChild') };
 

@@ -23,9 +23,9 @@ describe('ArticleDelete', () => {
     // arrange
     articleAPI.delete.and.returnValue(Promise.reject({status: 404, message: 'not found'}));
     // act
-    const result = await article.delete({ id: 1, title: 'the first article' });
+    const result = article.delete({ id: 1, title: 'the first article' });
     // assert
-    expect(result).toEqual('It looks like article "the first article" has alreay been deleted');
+    expect(result).toEqual('It looks like article "the first article" has already been deleted');
   });
 
   it(`should return no article to delete when that's the case`, async () => {

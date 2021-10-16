@@ -1,6 +1,6 @@
 import { ArticleDelete } from '../__src__/article-delete-sync.mjs';
 
-describe('ArticleDelete', () => {
+describe('ArticleDelete (sync)', () => {
   let article;
   let articleAPI;
 

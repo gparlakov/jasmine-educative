@@ -21,7 +21,6 @@ describe('ArticleComponent', () => {
     // assert
     expect(articleAPI.get).toHaveBeenCalledOnceWith(1);
     expect(component.article).toEqual(jasmine.objectContaining({ id: 1 }));
-    console.log(component, 'test1')
   });
 
   it(`when initialized it should call the articleAPI get and inform user upon article fetch failed`, async () => {
