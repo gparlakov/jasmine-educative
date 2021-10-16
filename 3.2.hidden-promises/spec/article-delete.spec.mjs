@@ -29,7 +29,7 @@ describe('ArticleDelete', () => {
     article.delete({ id: 1, title: 'the first article' });
     // assert
     setTimeout(() => {
-      expect(article.deleteResult).toEqual('It looks like article "the first article" has alreay been deleted');
+      expect(article.deleteResult).toEqual('It looks like article "the first article" has already been deleted');
       done();
     });
   });
