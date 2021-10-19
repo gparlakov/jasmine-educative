@@ -17,6 +17,6 @@ export class ArticleCreate {
       return `article created: "${title}" with content "${content}"`;
     }
 
-    return `expected string title and content but recived title: "${title}" content: "${content}"`;
+    return `expected string title and content but received title: "${title}" content: "${content}"`;
   }
 }
