@@ -14,9 +14,9 @@ export class ArticleCreate {
   create(title, content) {
     if (typeof title === 'string' && typeof content === 'string') {
       this.articleAPI.create(title, content);
-      return `article created: "${title}" with content "${content}"`;
+      return `article created: '${title}' with content '${content}'`;
     }
 
-    return `expected string title and content but recived title: "${title}" content: "${content}"`;
+    return `expected string title and content but recived title: '${title}' content: '${content}'`;
   }
 }

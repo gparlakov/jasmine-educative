@@ -1,8 +1,8 @@
 describe(
-    "My first test",
+    'My first test',
     () => {
         it(
-            "should run fine",
+            'should run fine',
             () => {
                 expect('fine').toEqual('fine');
             }

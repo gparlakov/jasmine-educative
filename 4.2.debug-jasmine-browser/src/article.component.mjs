@@ -23,7 +23,7 @@ export class ArticleComponent {
       }
     } catch {
       if(!this.destroyed) {
-        this.userMessenger.error(`Could not fetch article id: "${this.articleId}". Please try again.`);
+        this.userMessenger.error(`Could not fetch article id: '${this.articleId}'. Please try again.`);
       }
     }
     this.loading = false;

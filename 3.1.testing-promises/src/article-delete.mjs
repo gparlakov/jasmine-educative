@@ -15,13 +15,13 @@ export class ArticleDelete {
     if (a != null && a.id != null) {
       try {
         await this.articleAPI.delete(a.id);
-        return `article deleted: "${a.title}"`;
+        return `article deleted: '${a.title}'`;
       } catch (e) {
         if (e && e.status === 404) {
-          return `It looks like article "${a.title}" has already been deleted`;
+          return `It looks like article '${a.title}' has already been deleted`;
         }
 
-        return `Unknown error trying to delete "${a.title}". Please try again.`;
+        return `Unknown error trying to delete '${a.title}'. Please try again.`;
       }
     }
 

@@ -17,7 +17,7 @@ describe('ArticleDelete', () => {
     // assert
     setTimeout(() => {
       expect(articleAPI.delete).toHaveBeenCalledOnceWith(1);
-      expect(article.deleteResult).toEqual('article deleted: "the first article"');
+      expect(article.deleteResult).toEqual('article deleted: 'the first article'');
       done();
     });
   });
@@ -29,7 +29,7 @@ describe('ArticleDelete', () => {
     article.delete({ id: 1, title: 'the first article' });
     // assert
     setTimeout(() => {
-      expect(article.deleteResult).toEqual('It looks like article "the first article" has already been deleted');
+      expect(article.deleteResult).toEqual('It looks like article 'the first article' has already been deleted');
       done();
     });
   });

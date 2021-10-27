@@ -14,7 +14,7 @@ export class ArticleDelete {
   delete(a) {
     if (a != null && a.id != null) {
       this.articleAPI.delete(a.id);
-      return `article deleted: "${a.title}"`;
+      return `article deleted: '${a.title}'`;
     }
 
     return 'no article to delete';

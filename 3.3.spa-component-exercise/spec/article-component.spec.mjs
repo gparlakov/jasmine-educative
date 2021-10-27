@@ -31,7 +31,7 @@ describe('ArticleComponent', () => {
     // act
     await component.afterComponentInitialize();
     // assert
-    expect(userMessenger.error).toHaveBeenCalledOnceWith('Could not fetch article id: "1". Please try again.');
+    expect(userMessenger.error).toHaveBeenCalledOnceWith('Could not fetch article id: '1'. Please try again.');
   });
 
   it(`when initialized it should set loading to true and back to false after the article response arrives`, async () => {
@@ -81,7 +81,7 @@ describe('ArticleComponent', () => {
     component.beforeComponentDestroy();
     await initPromise;
     // assert
-    expect(userMessenger.error).not.toHaveBeenCalledOnceWith('Could not fetch article id: "1". Please try again.');
+    expect(userMessenger.error).not.toHaveBeenCalledOnceWith('Could not fetch article id: '1'. Please try again.');
   });
 
   fdescribe('article delete', () => {

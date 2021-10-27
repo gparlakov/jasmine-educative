@@ -1,8 +1,8 @@
-describe("test", () => {
-    it("should run fine", () => {
+describe('test', () => {
+    it('should run fine', () => {
         expect('fine').toEqual('fine');
     })
-    xit("should break", () => {
+    xit('should break', () => {
         expect('fine').toEqual('not fine');
     })
 })

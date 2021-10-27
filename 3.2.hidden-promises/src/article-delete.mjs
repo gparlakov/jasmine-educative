@@ -19,12 +19,12 @@ export class ArticleDelete {
     if (a != null && a.id != null) {
       this.articleAPI
         .delete(a.id)
-        .then(() => (this.deleteResult = `article deleted: "${a.title}"`))
+        .then(() => (this.deleteResult = `article deleted: '${a.title}'`))
         .catch((e) => {
           if (e && e.status === 404) {
-            this.deleteResult = `It looks like article "${a.title}" has already been deleted`;
+            this.deleteResult = `It looks like article '${a.title}' has already been deleted`;
           } else {
-            this.deleteResult = `Unknown error trying to delete "${a.title}". Please try again.`;
+            this.deleteResult = `Unknown error trying to delete '${a.title}'. Please try again.`;
           }
         });
     } else {

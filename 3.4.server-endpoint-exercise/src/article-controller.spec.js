@@ -30,7 +30,7 @@ describe('ArticleApiController', () => {
       // act
       const a = await expectAsync(articleController.get(1)).toBeRejectedWith({
         status: 'not found',
-        message: 'Article with id "1" was not found.',
+        message: 'Article with id '1' was not found.',
       });
       // assert
       expect(articleCollection.findOne).toHaveBeenCalledOnceWith({ id: 1 });

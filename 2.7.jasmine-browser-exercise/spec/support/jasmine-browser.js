@@ -1,21 +1,21 @@
 const specReporter = require('jasmine-spec-reporter').SpecReporter
 
 module.exports = {
-  srcDir: "src",
+  srcDir: 'src',
   srcFiles: [
-    "**/*.?(m)js"
+    '**/*.?(m)js'
   ],
-  specDir: "spec",
+  specDir: 'spec',
   specFiles: [
-    "**/*[sS]pec.?(m)js"
+    '**/*[sS]pec.?(m)js'
   ],
   helpers: [
-    "helpers/**/*.?(m)js"
+    'helpers/**/*.?(m)js'
   ],
   random: true,
   stopSpecOnExpectationFailure: false,
   browser: {
-    name: "headlessChrome"
+    name: 'headlessChrome'
   },
   reporters: [new specReporter()]
 }

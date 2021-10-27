@@ -10,7 +10,7 @@ class ArticleController {
       const a = await this.db.collection('Article').findOne({ id: id });
       return a;
     } catch (e) {
-      throw { status: 'not found', message: `Article with id "${id}" was not found.` };
+      throw { status: 'not found', message: `Article with id '${id}' was not found.` };
     }
   }
 
@@ -20,14 +20,14 @@ class ArticleController {
       if (article.version === etag) {
         await this.db.collection('Article').delete({ id: id });
       } else {
-        throw { status: 'version mismatch', message: `Article with id "${id}" seems to have been updated and client and server versions do not match.`}
+        throw { status: 'version mismatch', message: `Article with id '${id}' seems to have been updated and client and server versions do not match.`}
       }
     } catch (e) {
       if (e && typeof e.status === 'string') {
         throw e;
       }
 
-      throw { status: 'delete failed', message: `Article with id "${id}" could not be deleted.` };
+      throw { status: 'delete failed', message: `Article with id '${id}' could not be deleted.` };
     }
   }
 }

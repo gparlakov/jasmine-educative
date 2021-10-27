@@ -31,7 +31,7 @@ describe('ArticleApiController', () => {
       // assert
       await expectAsync(articleController.get(1)).toBeRejectedWith({
         status: 'not found',
-        message: 'Article with id "1" was not found.',
+        message: 'Article with id '1' was not found.',
       });
     });
   });

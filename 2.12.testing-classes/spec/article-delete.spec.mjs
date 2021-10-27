@@ -15,7 +15,7 @@ describe('ArticleDelete', () => {
     const result = article.delete({ id: 1, title: 'the first article' });
     // assert
     expect(articleAPI.delete).toHaveBeenCalledOnceWith(1);
-    expect(result).toEqual('article deleted: "the first article"');
+    expect(result).toEqual('article deleted: 'the first article'');
   });
 
   it(`should return no article to delete when that's the case`, () => {
