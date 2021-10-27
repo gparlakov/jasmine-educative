@@ -1,11 +1,5 @@
 # todo-s
 
-- Edit bullet points and summaries in:
-    2.12
-    3.1
-    3.2
-    3.3
-
 - look though and correct node.js to Node.js everywhere
 - jasmine to Jasmine everywhere (except the code).
 - Add exercise to lesson How to unit test a function
