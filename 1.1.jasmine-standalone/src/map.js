@@ -1,6 +1,6 @@
 
 /**
- * Map function (A polyfill for Array.prototype.map) that takes an array and maps over its items and returns a new array
+ * Map function (A polyfill for Array.prototype.map) that takes an array and maps over its items, and returns a new array
  * @param {Array} arr the array to iterate over and project each item via the projection arg
  * @param {(x: any) => any} projection the projection function which receives an item and returns an item
  */
