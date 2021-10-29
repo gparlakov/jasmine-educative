@@ -1,6 +1,6 @@
 # todo-s
 
-- look though and correct node.js to Node.js everywhere
+- look though and correct Node.js to Node.js everywhere
 - jasmine to Jasmine everywhere (except the code).
 - Add exercise to lesson How to unit test a function
 - Add exercises to lessons ----
