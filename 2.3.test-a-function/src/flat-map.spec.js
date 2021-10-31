@@ -9,9 +9,9 @@ describe('flatMap polyfill', () => {
     })
 
     it('test case 2', () => {
-        const strings = ['it's Sunny in', '', 'California always'];
+        const strings = ["it's Sunny in", '', 'California always'];
         const actual = strings.flatMap(x => x.split(' '));
-        expect(actual).toEqual(['it's', 'Sunny', 'in', '', 'California', 'always']);
+        expect(actual).toEqual(["it's", 'Sunny', 'in', '', 'California', 'always']);
     })
 
     it('test case 3', () => {

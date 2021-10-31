@@ -16,10 +16,10 @@ console.log('test case 1 passing:', actual.join() === expected);
 
 
 // Case 2
-const strings = ['it's Sunny in', '', 'California'];
+const strings = ["it's Sunny in", '', 'California'];
 
 const actual1 = strings.flatMap(x => x.split(' '));
-const expected1 =  ['it's','Sunny','in', '', 'California'];
+const expected1 =  ["it's",'Sunny','in', '', 'California'];
 console.log('test case 2 passing:',actual1.join() === expected1.join())
 
 

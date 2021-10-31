@@ -1,4 +1,4 @@
-Array.prototype.concat = function() {
+Array.prototype.concatPolyfill = function() {
 
   for (let i = 0; i < arguments.length; i++) {
     const element = arguments[i];
@@ -8,5 +8,5 @@ Array.prototype.concat = function() {
       this.push(element)
     }
   }
-  return ;
+  return this;
 }
