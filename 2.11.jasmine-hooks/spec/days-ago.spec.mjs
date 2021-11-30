@@ -1,4 +1,4 @@
-const { daysAgo } = require('./days-ago.js');
+import { daysAgo } from  '/__src__/days-ago.mjs';
 
 describe('daysAgo', () => {
   /** @type {jasmine.Clock} */
