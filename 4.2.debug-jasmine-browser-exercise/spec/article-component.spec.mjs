@@ -21,6 +21,7 @@ describe('ArticleComponent', () => {
     // assert
     expect(articleAPI.get).toHaveBeenCalledOnceWith(1);
     expect(component.article).toEqual(jasmine.objectContaining({ id: 1 }));
+    console.log(component, 'test1')
   });
 
   it(`when initialized it should call the articleAPI get and inform user upon article fetch failed`, async () => {
@@ -30,7 +31,7 @@ describe('ArticleComponent', () => {
     // act
     await component.afterComponentInitialize();
     // assert
-    expect(userMessenger.error).toHaveBeenCalledOnceWith('Could not fetch article id: '1'. Please try again.');
+    expect(userMessenger.error).toHaveBeenCalledOnceWith(`Could not fetch article id: '1'. Please try again.`);
   });
 
   it(`when initialized it should set loading to true and back to false after the article response arrives`, async () => {
@@ -78,6 +79,6 @@ describe('ArticleComponent', () => {
     component.beforeComponentDestroy();
     await initPromise;
     // assert
-    expect(userMessenger.error).not.toHaveBeenCalledOnceWith('Could not fetch article id: '1'. Please try again.');
+    expect(userMessenger.error).not.toHaveBeenCalledOnceWith(`Could not fetch article id: '1'. Please try again.`);
   });
 });

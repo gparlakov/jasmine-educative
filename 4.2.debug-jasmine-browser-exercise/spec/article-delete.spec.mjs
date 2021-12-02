@@ -16,7 +16,7 @@ describe('ArticleDelete', () => {
     const result = await article.delete({ id: 1, title: 'the first article' });
     // assert
     expect(articleAPI.delete).toHaveBeenCalledOnceWith(1);
-    expect(result).toEqual('article deleted: 'the first article'');
+    expect(result).toEqual(`article deleted: 'the first article'`);
   });
 
   it(`when the articleAPI delete returns status 404 it should return - already been deleted`, async () => {
@@ -25,7 +25,7 @@ describe('ArticleDelete', () => {
     // act
     const result = article.delete({ id: 1, title: 'the first article' });
     // assert
-    expect(result).toEqual('It looks like article 'the first article' has already been deleted');
+    expect(result).toEqual(`It looks like article 'the first article' has already been deleted`);
   });
 
   it(`should return no article to delete when that's the case`, async () => {
